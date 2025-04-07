@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+curl -sS https://starship.rs/install.sh | sh
+mkdir -p ~/.config && wget https://raw.githubusercontent.com/manooi/config/master/starship.toml -O ~/.config/starship.toml
