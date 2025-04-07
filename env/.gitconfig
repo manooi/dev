@@ -1,0 +1,25 @@
+[user]
+	name = sirawit.mahanin
+	email = sirawit.mn@gmail.com
+[alias]
+	adog = log --all --decorate --oneline --graph
+	pulld = pull origin dev
+	pullq = pull origin qas
+	po = push origin
+	cd = checkout dev
+	cq = checkout qas
+	cnb = checkout -b
+	db = branch -d
+	Db = branch -D
+	fp = fetch --prune
+	mff = merge --ff-only
+	nff = merge --no-ff --no-edit
+	rename = "!sh -c 'git branch -m \"$(git rev-parse --abbrev-ref HEAD)\" \"$0\"'"
+	s = status
+	r = restore
+	c = checkout
+	cdpd = !git checkout dev && git pull origin dev
+	cqpq = !git checkout qas && git pull origin qas
+	count = rev-list --count HEAD
+	trio = "!sh -c 'git cdpd && git nff - && git po @'"
+        reall = "!sh -c 'git restore . && git restore --staged .'"
