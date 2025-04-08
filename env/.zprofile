@@ -1,6 +1,6 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
-export DEV_ENV=$HOME/dev
+DEV_ENV=$HOME/dev
 
 dev_env() {
 
