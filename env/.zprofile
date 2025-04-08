@@ -27,4 +27,4 @@ addToPathFront() {
     fi
 }
 
-#addToPathFront $HOME/.local/bin
+addToPathFront $HOME/.local/bin
