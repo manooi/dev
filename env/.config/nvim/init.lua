@@ -37,6 +37,9 @@ vim.g.loaded_netrwPlugin = 1
 -- Enable 24-bit colors (if your terminal supports it)
 vim.opt.termguicolors = true
 
+vim.opt.hls = false
+vim.opt.ic = true
+
 -- Load nvim-tree configuration using Lua
 require("nvim-tree").setup({
   sort = {
