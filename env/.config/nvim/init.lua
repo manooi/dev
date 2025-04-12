@@ -5,6 +5,13 @@ require('packer').startup(function(use)
   use 'sainnhe/sonokai'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+
+  use {
+    'junegunn/fzf',
+    run = function() vim.fn['fzf#install']() end
+  }
+  use 'junegunn/fzf.vim'
+
 end)
 
 -- Set the colorscheme
@@ -52,3 +59,5 @@ vim.keymap.set("n", "<C-f>", ":NvimTreeFocus<CR>", { noremap = true, silent = tr
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader><CR>', ':so ~/.config/nvim/init.lua<CR>', { noremap = true })
+vim.keymap.set('n', '<C-p>', ':Files<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-S-p>', ':GFiles<CR>', { noremap = true, silent =true })

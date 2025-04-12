@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 bindkey '`' autosuggest-execute
 eval "$(starship init zsh)"
+unsetopt autopushd
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
