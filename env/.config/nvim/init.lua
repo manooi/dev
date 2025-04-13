@@ -36,9 +36,11 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 -- Enable 24-bit colors (if your terminal supports it)
 vim.opt.termguicolors = true
-
+-- Search highlight
 vim.opt.hls = false
 vim.opt.ic = true
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
 
 -- Load nvim-tree configuration using Lua
 require("nvim-tree").setup({
