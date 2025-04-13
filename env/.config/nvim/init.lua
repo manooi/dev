@@ -4,6 +4,7 @@ require("_nvimtree")
 require("_lsp")
 require("_cmp")
 require("_keymaps")
+require("_vscode_theme")
 
-vim.cmd("colorscheme sonokai")
+--vim.cmd("colorscheme sonokai")
 

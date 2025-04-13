@@ -1,8 +1,9 @@
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'sainnhe/sonokai'
+  --use 'sainnhe/sonokai'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+  use 'Mofiqul/vscode.nvim'
 
   use {
     'junegunn/fzf',
