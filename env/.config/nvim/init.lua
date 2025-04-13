@@ -63,6 +63,7 @@ vim.g.mapleader = ' '
 vim.keymap.set("n", "<C-f>", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-S-q>", ":q!<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader><CR>', ':so ~/.config/nvim/init.lua<CR>', { noremap = true })
 
 -- FZF
