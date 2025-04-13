@@ -12,6 +12,23 @@ require('packer').startup(function(use)
   }
   use 'junegunn/fzf.vim'
 
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
+  use {
+  'hrsh7th/nvim-cmp',
+  requires = {
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+  }
+}
+
 end)
 
 -- Set the colorscheme
@@ -58,6 +75,22 @@ require("nvim-tree").setup({
   },
 })
 
+-- Mason + LSP
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+local lspconfig = require("lspconfig")
+
+lspconfig.ts_ls.setup {
+    on_attach = function(client, bufnr)
+        -- disable tsserver formatting if using null-ls + prettier
+        client.server_capabilities.documentFormattingProvider = false
+    end,
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
+}
+-- Mason
+
 -- Map Ctrl+f to focus on NvimTree window
 vim.g.mapleader = ' '
 vim.keymap.set("n", "<C-f>", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
@@ -75,3 +108,26 @@ vim.keymap.set('n', '<C-j>', ':cnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', ':cprev<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-S-o>', ':copen<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-S-c>', ':cclose<CR>', { noremap = true, silent = true })
+
+
+
+
+local cmp = require'cmp'
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  }, {
+    { name = 'buffer' },
+  })
+})
