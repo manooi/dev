@@ -12,6 +12,3 @@ sudo apt install cmake gettext lua5.1 liblua5.1-0-dev
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
-# Packer
-#git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-# ~/.local/share/nvim/site/pack/packer/start/packer.nvim

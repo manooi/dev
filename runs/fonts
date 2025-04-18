@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Define variables
+FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/CascadiaMono.zip"
+FONT_NAME="CascadiaMono"
+ZIP_FILE="${FONT_NAME}.zip"
+FONT_DIR="$HOME/.local/share/fonts/${FONT_NAME}"
+
+# Create font directory
+mkdir -p "$FONT_DIR"
+
+# Download font zip
+echo "Downloading $FONT_NAME..."
+curl -L -o "$ZIP_FILE" "$FONT_URL"
+
+# Unzip font into the font directory
+echo "Extracting $ZIP_FILE to $FONT_DIR..."
+unzip -o "$ZIP_FILE" -d "$FONT_DIR"
+
+# Clean up zip file
+rm "$ZIP_FILE"
+
+# Update font cache
+echo "Updating font cache..."
+fc-cache -fv "$FONT_DIR"
+
+echo "$FONT_NAME installed successfully!"
+

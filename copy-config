@@ -3,14 +3,15 @@
 dry_run="0"
 
 if [ -z "$XDG_CONFIG_HOME" ]; then
-    echo "no xdg config hom"
+    echo "no XDG_CONFIG_HOME"
     echo "using ~/.config"
     XDG_CONFIG_HOME=$HOME/.config
 fi
 
 if [ -z "$DEV_ENV" ]; then
-    echo "env var DEV_ENV needs to be present"
-    exit 1
+    echo "no DEV_ENV"
+    echo "using ~/dev"
+    DEV_ENV=$HOME/dev
 fi
 
 if [[ $1 == "--dry" ]]; then
