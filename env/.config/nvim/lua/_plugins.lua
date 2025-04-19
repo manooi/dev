@@ -27,5 +27,10 @@ require('packer').startup(function(use)
       'hrsh7th/cmp-path',
     }
   }
+
+  use {
+    'preservim/nerdcommenter'
+  }
+
 end)
 

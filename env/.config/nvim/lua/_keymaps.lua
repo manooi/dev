@@ -19,3 +19,4 @@ vim.keymap.set('n', '<C-k>', ':cprev<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-S-o>', ':copen<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-S-c>', ':cclose<CR>', { noremap = true, silent = true })
 
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Show diagnostic message" })
