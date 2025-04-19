@@ -1,10 +1,11 @@
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = { "tailwindcss", "ts_ls", "yamlls", "html", "jsonls", "cssls"},
+})
 
 local lspconfig = require("lspconfig")
 
 lspconfig.ts_ls.setup {
-  ensure_installed = { "tailwindcss" },
   on_attach = function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
   end,
@@ -24,5 +25,26 @@ lspconfig.tailwindcss.setup({
     "svelte",
     "vue",
   },
+  capabilities = require('cmp_nvim_lsp').default_capabilities()
+})
+
+lspconfig.cssls.setup({
+  filetypes = { "css", "scss", "sass" },
+  capabilities = require("cmp_nvim_lsp").default_capabilities()
+})
+
+lspconfig.html.setup({
+  filetypes = { "html"},
+  capabilities = require("cmp_nvim_lsp").default_capabilities()
+})
+
+lspconfig.jsonls.setup({
+  filetypes = { "json"},
+  capabilities = require("cmp_nvim_lsp").default_capabilities()
+})
+
+lspconfig.yamlls.setup({
+  filetypes = { "yaml", "yml"},
+  capabilities = require("cmp_nvim_lsp").default_capabilities()
 })
 

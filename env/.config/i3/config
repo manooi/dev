@@ -190,3 +190,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+exec --no-startup-id xset r rate 200 30
+
