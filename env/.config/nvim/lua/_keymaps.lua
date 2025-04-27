@@ -31,6 +31,7 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>l', ":BufferNext<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>h', ":BufferPrevious<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>x', ":BufferClose<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>n', ":BufferPick<CR>", { noremap = true, silent = true })
 
 -- LSP
 vim.keymap.set('n', '<F2>', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })

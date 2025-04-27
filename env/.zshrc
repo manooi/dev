@@ -113,3 +113,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export DEV_ENV=$HOME/dev
+
+dirstack() {
+  local dir
+  dir=$(dirs -v | fzf --reverse | awk '{print $1}')
+  if [[ -n "$dir" ]]; then
+    eval "cd ~$dir"
+  fi
+}
+alias ds='dirstack'

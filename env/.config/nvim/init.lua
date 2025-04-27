@@ -5,4 +5,5 @@ require("_lsp")
 require("_cmp")
 require("_keymaps")
 require("_vscode_theme")
+require("_barbar")
 
