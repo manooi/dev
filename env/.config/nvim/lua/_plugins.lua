@@ -32,5 +32,7 @@ require('packer').startup(function(use)
     'preservim/nerdcommenter'
   }
 
+  use 'romgrk/barbar.nvim'
+
 end)
 

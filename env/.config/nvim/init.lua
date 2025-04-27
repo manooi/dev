@@ -6,5 +6,3 @@ require("_cmp")
 require("_keymaps")
 require("_vscode_theme")
 
---vim.cmd("colorscheme sonokai")
-
