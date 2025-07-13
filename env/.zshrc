@@ -122,3 +122,5 @@ dirstack() {
   fi
 }
 alias ds='dirstack'
+eval "$(atuin init zsh)"
+

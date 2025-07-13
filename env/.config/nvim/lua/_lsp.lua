@@ -48,3 +48,8 @@ lspconfig.yamlls.setup({
   capabilities = require("cmp_nvim_lsp").default_capabilities()
 })
 
+lspconfig.clangd.setup({
+  filetypes = { "c"},
+  capabilities = require("cmp_nvim_lsp").default_capabilities()
+})
+
