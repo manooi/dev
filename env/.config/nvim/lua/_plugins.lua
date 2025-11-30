@@ -34,5 +34,11 @@ require('packer').startup(function(use)
 
   use 'romgrk/barbar.nvim'
 
+
+  use {
+   'lewis6991/gitsigns.nvim',
+   requires = { 'nvim-lua/plenary.nvim' },
+  }
+
 end)
 

@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "tailwindcss", "ts_ls", "yamlls", "html", "jsonls", "cssls"},
+    ensure_installed = { "tailwindcss", "ts_ls", "yamlls", "html", "jsonls", "cssls", "clangd"},
 })
 
 local lspconfig = require("lspconfig")
@@ -49,7 +49,7 @@ lspconfig.yamlls.setup({
 })
 
 lspconfig.clangd.setup({
-  filetypes = { "c"},
+  filetypes = { "c" },
   capabilities = require("cmp_nvim_lsp").default_capabilities()
 })
 

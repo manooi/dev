@@ -17,8 +17,8 @@ vim.keymap.set('n', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
 -- Quickfix
 vim.keymap.set('n', '<C-j>', ':cnext<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', ':cprev<cr>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-S-o>', ':copen<cr>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-S-c>', ':cclose<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>o', ':copen<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>z', ':cclose<cr>', { noremap = true, silent = true })
 
 -- Copy to system clipboard (doesn't work with Mac)
 -- vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, silent = true })
